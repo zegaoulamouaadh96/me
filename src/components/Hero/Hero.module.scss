@@ -1,0 +1,258 @@
+/* ─── Hero Section ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 0 80px;
+  background-color: transparent;
+
+  @media (max-width: 768px) {
+    padding: 100px 0 60px;
+  }
+}
+
+/* Cybernetic Grid Overlay */
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.008) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Background Glowing Orbs */
+.orbWrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.orb {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(0, 255, 136, 0.03) 40%,
+    transparent 70%
+  );
+  filter: blur(100px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* Hero Container */
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 28px;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    gap: 20px;
+  }
+}
+
+/* Avatar Area */
+.avatarWrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.02) 100%);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  scale: 0.8;
+  will-change: transform;
+
+  @media (max-width: 768px) {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  filter: contrast(105%) brightness(130%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Text Group */
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.headline {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  color: #fff;
+  overflow: hidden;
+  margin: 0;
+
+  :global(.split-char) {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+.subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.4;
+  margin: 0;
+  overflow: hidden;
+
+  :global(.split-word) {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+/* Button Group (Pill shape matches screenshot) */
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+.btnMessage,
+.btnConnect {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 9999px; /* pill shape */
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #F5F5F5;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s var(--ease-out-expo);
+  opacity: 0;
+  transform: translateY(20px);
+  text-decoration: none;
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btnIcon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.scrollLabel {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.scrollLine {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), transparent);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: var(--accent, #00FF88);
+    animation: scrollAnimation 2s infinite ease-in-out;
+  }
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateY(-100%);
+  }
+  80% {
+    transform: translateY(330%);
+  }
+  100% {
+    transform: translateY(330%);
+  }
+}

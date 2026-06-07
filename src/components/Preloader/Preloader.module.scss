@@ -1,0 +1,204 @@
+// ─────────────────────────────────────────────────────────
+// Preloader — Cinematic page loading animation
+// ─────────────────────────────────────────────────────────
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: clip-path 0.8s var(--ease-in-out),
+              transform 0.8s var(--ease-in-out);
+  will-change: clip-path, transform;
+}
+
+// ─── Exit Animation ─────────────────────────────────────
+.preloaderExit {
+  clip-path: inset(0 0 100% 0);
+  // Alternative: transform-based exit
+  // transform: translateY(-100%);
+}
+
+// ─── Counter ────────────────────────────────────────────
+.counter {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -4px;
+  position: relative;
+
+  // Subtle glow behind the number
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(
+      circle,
+      rgba(var(--accent-rgb), 0.06) 0%,
+      transparent 60%
+    );
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.counterSuffix {
+  font-size: 0.4em;
+  letter-spacing: 0;
+  opacity: 0.7;
+}
+
+// ─── Loading Bar ────────────────────────────────────────
+.loadingBar {
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 32px;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loadingBarFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: inherit;
+  transform-origin: left;
+  transition: width 0.1s linear;
+  position: relative;
+
+  // Glow effect on the leading edge
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -4px;
+    width: 20px;
+    height: 10px;
+    background: var(--accent);
+    filter: blur(8px);
+    opacity: 0.6;
+    border-radius: 50%;
+  }
+}
+
+// ─── Loading Text ───────────────────────────────────────
+.loadingText {
+  margin-top: 24px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: rgba(var(--text-rgb), 0.25);
+  font-weight: 500;
+}
+
+// ─── Logo in Preloader ──────────────────────────────────
+.preloaderLogo {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: rgba(var(--text-rgb), 0.2);
+  letter-spacing: -0.5px;
+}
+
+// ─── Decorative Corners ─────────────────────────────────
+.corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  &TopLeft {
+    top: 40px;
+    left: 40px;
+
+    &::before {
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 1px;
+    }
+
+    &::after {
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 40px;
+    }
+  }
+
+  &TopRight {
+    top: 40px;
+    right: 40px;
+
+    &::before {
+      top: 0;
+      right: 0;
+      width: 40px;
+      height: 1px;
+    }
+
+    &::after {
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 40px;
+    }
+  }
+
+  &BottomLeft {
+    bottom: 40px;
+    left: 40px;
+
+    &::before {
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 1px;
+    }
+
+    &::after {
+      bottom: 0;
+      left: 0;
+      width: 1px;
+      height: 40px;
+    }
+  }
+
+  &BottomRight {
+    bottom: 40px;
+    right: 40px;
+
+    &::before {
+      bottom: 0;
+      right: 0;
+      width: 40px;
+      height: 1px;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+      width: 1px;
+      height: 40px;
+    }
+  }
+}

@@ -1,0 +1,203 @@
+/* ─── About Section (Why Smooth Scroll style) ─── */
+.section {
+  position: relative;
+  padding: 160px 0;
+  background-color: transparent;
+  overflow: hidden;
+
+  @media (max-width: 1024px) {
+    padding: 100px 0;
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+
+/* Background Scene with Floating Portrait */
+.bgScene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.redGlow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 42, 42, 0.1) 0%,
+    rgba(255, 42, 42, 0.02) 40%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  top: 25%;
+  right: 5%;
+  will-change: transform;
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+    right: -50px;
+  }
+}
+
+.bgPortrait {
+  position: absolute;
+  top: 15%;
+  right: 8%;
+  width: 42vw;
+  max-width: 480px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%; /* circular mask matching the screenshot vibe */
+  filter: grayscale(100%) contrast(115%) brightness(130%);
+  opacity: 0.28;
+  will-change: transform, opacity;
+  
+  /* Radial mask to blend edges perfectly into pure black */
+  mask-image: radial-gradient(circle at center, black 35%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at center, black 35%, transparent 70%);
+
+  @media (max-width: 1024px) {
+    width: 60vw;
+    right: -10%;
+    top: 30%;
+    opacity: 0.18;
+  }
+}
+
+/* Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: flex-start;
+  margin-bottom: 80px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* Left Column */
+.leftCol {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.accentLine {
+  width: 6px;
+  background-color: var(--accent, #FF2A2A);
+  box-shadow: 0 0 15px rgba(255, 42, 42, 0.4);
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.mainTitle {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 0.95;
+  color: #fff;
+  text-transform: uppercase;
+
+  span {
+    display: block;
+    overflow: hidden;
+
+    :global(.split-char) {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
+}
+
+/* Right Column */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.paragraph {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: transform, opacity;
+}
+
+/* Stats Footer */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.stat {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--accent, #FF2A2A);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+}
