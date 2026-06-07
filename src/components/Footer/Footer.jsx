@@ -60,7 +60,7 @@ export default function Footer() {
         <div className={styles.columns}>
           {/* Brand */}
           <div className={styles.brand}>
-            <span className={styles.brandName}>Mouaadh.</span>
+            <span className={styles.brandName}>Mouaadh Zegaoula</span>
             <p className={styles.brandDesc}>
               AI Developer &amp; Cybersecurity Enthusiast from Algeria
             </p>
