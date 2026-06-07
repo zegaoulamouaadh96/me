@@ -8,8 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PROJECTS = [
   {
-    label: 'AI & IoT SYSTEMS',
-    title: 'Intelligent predictive home automation adapts to daily routines',
+    label: 'HOMIX - SMART HOME INTEGRATION',
+    title: 'AI-powered smart home platform with real-time device control and automation',
     image: '/projects/smart_home.png',
     theme: 'green',
     tags: ['#Python', '#TensorFlow', '#ESP32', '#MQTT', '#IoT'],
@@ -17,32 +17,24 @@ const PROJECTS = [
     color: '#00ff88',
   },
   {
-    label: 'NATURAL LANGUAGE PROCESSING',
-    title: 'Context-aware chatbot with real-time transformer architecture',
+    label: 'Logiciel RH - Gestion des Employés',
+    title: 'Desktop Application uses resources that are developed with Electron and JavaScript, using SQLite as a local donation base.',
     image: '/projects/ai_chat.png',
     theme: 'red',
-    tags: ['#PyTorch', '#LangChain', '#FastAPI', '#Redis', '#LLM'],
-    buttonText: 'Inside the AI ↗',
+    tags: ['#SQLite', '#JavaScript', '#FastAPI', '#Redis', '#LLM'],
+    buttonText: 'Explore the application ↗',
     color: '#ff4b4b',
   },
   {
-    label: 'NETWORK SECURITY & MONITORING',
-    title: 'Real-time threat monitoring and active vulnerability assessment',
+    label: 'sheroom-cars ',
+    title: 'A website for selling cars on behalf of a car company.',
     image: '/projects/cybersecurity.png',
     theme: 'orange',
     tags: ['#React', '#NodeJS', '#Python', '#Wireshark', '#SecOps'],
     buttonText: 'Launch dashboard ↗',
     color: '#ffa500',
   },
-  {
-    label: 'EDGE AI & EMBEDDED SYSTEMS',
-    title: 'Facial recognition scans on resource-constrained microcontrollers',
-    image: '/projects/facial_recognition.png',
-    theme: 'blue',
-    tags: ['#C++', '#TensorFlowLite', '#OpenCV', '#MQTT', '#EdgeAI'],
-    buttonText: 'Inside the system ↗',
-    color: '#00aeff',
-  },
+ 
   {
     label: 'FULL-STACK DEVELOPMENT',
     title: 'High-performance scalable applications with modern architecture',

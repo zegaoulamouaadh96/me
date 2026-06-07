@@ -8,29 +8,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TIMELINE = [
   {
-    period: '2024 — Present',
-    title: 'AI & Machine Learning Projects',
-    description:
-      'Developing intelligent systems using machine learning and deep learning frameworks. Building AI-powered applications including chatbots, face recognition systems, and predictive models.',
-  },
-  {
     period: '2023 — Present',
-    title: 'Cybersecurity Research',
-    description:
-      'Exploring network security, ethical hacking, and vulnerability assessment. Building security monitoring tools and conducting penetration testing on various systems.',
-  },
-  {
-    period: '2022 — Present',
     title: 'Full-Stack Web Development',
     description:
-      'Creating modern web applications using React, Node.js, and TypeScript. Focused on building responsive, performant, and scalable applications with exceptional user experiences.',
+      'Creating modern web applications using React, Node.js, and TypeScript. Focused on building responsive, performant, and scalable applications with exceptional user experiences.',},
+  {
+    period: '2024 — Present',
+    title: 'application development ',
+    description:
+      'Using advanced API and Dart technologies to develop and create applications',
   },
   {
-    period: '2023 — Present',
-    title: 'Smart Home & IoT Systems',
+    period: '2026 — Present',
+    title: 'AI & Machine Learning Projects',
     description:
-      'Designing and building smart home automation systems using ESP32 microcontrollers, integrating AI for predictive automation, voice control, and real-time monitoring.',
-  },
+    'Developing intelligent systems using machine learning and deep learning frameworks. Building AI-powered applications including chatbots, face recognition systems, and predictive model',
+
+    },
+  
 ];
 
 export default function Experience() {

@@ -8,8 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PARAGRAPHS = [
   "I'm Mouaadh Zegaoula, a passionate developer from Algeria with a deep interest in artificial intelligence, cybersecurity, and modern web technologies. My journey in tech began with curiosity about how systems work and evolved into a commitment to building intelligent, secure digital solutions.",
-  "I believe in the power of continuous learning and innovation. From developing smart home systems with ESP32 microcontrollers to building AI-powered applications, I constantly push the boundaries of what's possible with technology.",
-  "My long-term goal is to contribute to the advancement of AI and cybersecurity, creating systems that are not only intelligent but also secure and ethical. I approach every project with a problem-solving mindset and a passion for excellence.",
+  "I believe in the power of continuous learning and innovation., I constantly push the boundaries of what's possible with technology.",
+  "My long-term goal is to contribute to the advancement of AI and cybersecurity, creating systems that are not only intelligent but also secure and ethical. I approach every project with a problem-solving mindset and a passion for excellence."
 ];
 
 const STATS = [
@@ -166,8 +166,8 @@ export default function About() {
               <h2 className={styles.mainTitle}>
                 <span>WHY</span>
                 <span>CHOOSE</span>
-                <span>CYBER</span>
-                <span>&amp; AI?</span>
+                <span>development</span>
+                <span>&amp; professional</span>
               </h2>
             </div>
           </div>
