@@ -100,13 +100,13 @@ export default function About() {
             yPercent: 15,
             rotation: -20,
             scale: 0.85,
-            opacity: 0.08,
+            opacity: 0.55,
           },
           {
             yPercent: -15,
             rotation: 12,
             scale: 1.05,
-            opacity: 0.22,
+            opacity: 0.85,
             ease: 'none',
             scrollTrigger: {
               trigger: sectionRef.current,

@@ -64,9 +64,11 @@
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%; /* circular mask matching the screenshot vibe */
-  filter: grayscale(100%) contrast(135%) brightness(170%);
-  opacity: 0.68;
+  filter: grayscale(100%) contrast(130%) brightness(160%);
+  opacity: 0.86;
   will-change: transform, opacity;
+ 
+
   
   /* Radial mask to blend edges perfectly into pure black */
   mask-image: radial-gradient(circle at center, black 35%, transparent 70%);
@@ -76,7 +78,7 @@
     width: 60vw;
     right: -10%;
     top: 30%;
-    opacity: 0.48;
+    opacity: 0.65;
   }
 }
 
